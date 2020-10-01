@@ -22,7 +22,7 @@ int is_full (StackType *s){
 
 void push (StackType *s, element item){
 	if (is_full(s)){
-		fprintf(stderr, "½ºÅÃ Æ÷È­ ¿¡·¯\n");
+		fprintf(stderr, "ìŠ¤íƒ í¬í™” ì—ëŸ¬\n");
 		return ;
 	}
 	else s->data[++(s->top)]=item;
@@ -30,7 +30,7 @@ void push (StackType *s, element item){
 
 element pop (StackType *s){
 	if (is_empty (s)){
-		fprintf(stderr, "½ºÅÃ °ø¹é ¿¡·¯\n");
+		fprintf(stderr, "ìŠ¤íƒ ê³µë°± ì—ëŸ¬\n");
 		exit(1);
 	}
 	else return s->data[(s->top)--];
@@ -38,7 +38,7 @@ element pop (StackType *s){
 
 element peek (StackType *s){
 	if (is_empty(s)){
-		fprintf(stderr, "½ºÅÃ °ø¹é ¿¡·¯\n");
+		fprintf(stderr, "ìŠ¤íƒ ê³µë°± ì—ëŸ¬\n");
 		exit(1);
 	}
 	else return s->data[s->top];
@@ -70,17 +70,17 @@ int check_matching (const char *in){
 		
 		}
 	}
-	if (is_empty(&s)) return 1;	//½ºÅÃÀÌ ºñ¾îÀÖÀ¸¸é ¼º°ø, 1¹İÈ¯ 
-	return 0;			//½ºÅÃ¿¡ ³²¾ÆÀÖÀ¸¸é ¿À·ù, 0¹İÈ¯ 
+	if (is_empty(&s)) return 1;	//ìŠ¤íƒì´ ë¹„ì–´ìˆìœ¼ë©´ ì„±ê³µ, 1ë°˜í™˜ 
+	return 0;			//ìŠ¤íƒì— ë‚¨ì•„ìˆìœ¼ë©´ ì˜¤ë¥˜, 0ë°˜í™˜ 
 	
 }
 
 int main (void){
 	char *p= "{A[(i+)]}";
 	if (check_matching (p)==1)
-		printf("%s °ıÈ£ °Ë»ç ¼º°ø\n",p);
+		printf("%s ê´„í˜¸ ê²€ì‚¬ ì„±ê³µ\n",p);
 	else 
-		printf("%s °ıÈ£ °Ë»ç ½ÇÆĞ\n",p);
+		printf("%s ê´„í˜¸ ê²€ì‚¬ ì‹¤íŒ¨\n",p);
 	return 0;
 } 
 
